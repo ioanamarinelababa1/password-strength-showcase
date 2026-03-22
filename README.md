@@ -56,31 +56,6 @@ Referință NIST: 60+ biți = Puternică | 128+ biți = Crypto-grade
 ### Estimare Timp Brute-Force
 Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 
----
-
-## 🚀 Cum Rulezi Proiectul
-
-### Cerințe
-
-Python 3.10+
-pip install flask flask-cors
-
-### Varianta 1 — CLI
-
-python3 checker.py
-
-
-### Varianta 2 — GUI Desktop
-
-python3 gui.py
-
-
-### Varianta 3 — Web App
-
-python3 app.py
-
----
-
 ## 📡 API Endpoints
 
 | Method | Endpoint | Descriere |
