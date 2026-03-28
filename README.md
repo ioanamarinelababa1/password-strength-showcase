@@ -2,6 +2,9 @@
 ### Cybersecurity Project — Python · Flask · Regex · Entropy · SHA-256 
 
 🌐 **Live Demo:** https://passsec.up.railway.app
+Aplicația rulează live pe Railway cu HTTPS automat — accesibilă din orice browser, fără instalare locală.
+
+---
 
 > ⚠️ **Status: In Development** — Proiect activ, în continuă îmbunătățire.
 
@@ -85,6 +88,12 @@ json
   },
   "sugestii": []
 }
+
+---
+
+| # | Vulnerabilitate | Severitate | Status |
+
+- Realizat security audit complet cu Claude Code — identificat și remediat 5 vulnerabilități reale (path traversal, RCE prin debug mode, XSS innerHTML, header injection, CORS wildcard) conform metodologiei OWASP
 
 ---
 
