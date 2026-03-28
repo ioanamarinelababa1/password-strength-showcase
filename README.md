@@ -1,5 +1,7 @@
 # 🛡️ Password Strength Checker v3.0
-### Cybersecurity Project — Python · Flask · Regex · Entropy · SHA-256
+### Cybersecurity Project — Python · Flask · Regex · Entropy · SHA-256 
+
+🌐 **Live Demo:** https://passsec.up.railway.app
 
 > ⚠️ **Status: In Development** — Proiect activ, în continuă îmbunătățire.
 
