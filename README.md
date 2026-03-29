@@ -70,30 +70,11 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 | `GET` | `/api/download/<file>` | Descarcă raportul |
 | `GET` | `/api/status` | Health check server |
 
-
-### Exemplu Response
-json
-{
-  "scor": 80,
-  "nivel": "PUTERNIC",
-  "entropie": { "biti": 76.4, "nivel": "Puternică" },
-  "timp_spargere": "~45 ani",
-  "in_rockyou": false,
-  "hash_sha256": "a3f5c...",
-  "criterii": {
-    "Lungime bună (12+ caractere)": true,
-    "Conține litere mari (A-Z)": true,
-    "Conține cifre (0-9)": true,
-    "Conține simboluri speciale (!@#$...)": true
-  },
-  "sugestii": []
-}
-
 ---
 
 | # | Vulnerabilitate | Severitate | Status |
 
-- Realizat security audit complet cu Claude Code — identificat și remediat 5 vulnerabilități reale (path traversal, RCE prin debug mode, XSS innerHTML, header injection, CORS wildcard) conform metodologiei OWASP
+- Realizat security audit complet — identificat și remediat 5 vulnerabilități reale (path traversal, RCE prin debug mode, XSS innerHTML, header injection, CORS wildcard) conform metodologiei OWASP
 
 ---
 
