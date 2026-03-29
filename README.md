@@ -85,7 +85,6 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 
 ## 📁 Structura Proiectului
 
----
 password_strength/
 ├── checker.py                  # Motor principal — regex, entropie, rockyou, HIBP
 ├── app.py                      # Flask API server — securizat v3.1
