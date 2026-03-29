@@ -81,7 +81,6 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 ### 🔑 Integrări API
 - Integrat HaveIBeenPwned API cu k-anonymity — verificare parolă față de 600M+ breach-uri reale fără ca parola să părăsească serverul, cu reziliență la erori de rețea
 
-
 ---
 
 ## 📁 Structura Proiectului
@@ -99,6 +98,7 @@ password_strength/
 ├── data/
 │   └── rockyou.txt             # 14M parole compromise (descărcat separat)
 └── rapoarte/                   # Rapoarte .txt generate (auto-creat)
+
 ---
 
 ## 🗺️ Roadmap — Dezvoltări Viitoare
