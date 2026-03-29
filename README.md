@@ -97,17 +97,26 @@ json
 
 ---
 
+### 🔑 Integrări API
+- Integrat HaveIBeenPwned API cu k-anonymity — verificare parolă față de 600M+ breach-uri reale fără ca parola să părăsească serverul, cu reziliență la erori de rețea
+
+
+---
+
 ## 📁 Structura Proiectului
 
 password_strength/
-├── checker.py              # Motor principal de analiză
-├── app.py                  # Flask API server
-├── gui.py                  # Interfață grafică tkinter
-├── password_checker.html   # Interfață web dark-theme
+├── checker.py                  # Motor principal — regex, entropie, rockyou, HIBP
+├── app.py                      # Flask API server — securizat v3.1
+├── gui.py                      # Interfață grafică tkinter
+├── password_checker.html       # Interfață web dark-theme cybersecurity
+├── Procfile                    # Configurare deployment Railway
+├── requirements.txt            # Dependințe Python
+├── README.md                   # Documentație proiect
+├── venv/                       # Virtual environment (local, nu pe GitHub)
 ├── data/
-│   └── rockyou.txt         # Lista parole compromise (descărcat separat)
-└── rapoarte/               # Rapoarte generate (auto-creat)
-
+│   └── rockyou.txt             # 14M parole compromise (descărcat separat)
+└── rapoarte/                   # Rapoarte .txt generate (auto-creat)
 ---
 
 ## 🗺️ Roadmap — Dezvoltări Viitoare
@@ -139,7 +148,6 @@ password_strength/
 - [ ] Input sanitization — prevenire SQL Injection & XSS
 
 ### 🔑 Integrări API
-- [ ] HaveIBeenPwned API — verificare breach în timp real cu k-anonymity
 - [ ] Notificare email automată dacă parola utilizatorului apare într-un breach nou
 - [ ] Webhook support pentru integrare în aplicații terțe
 
