@@ -102,7 +102,7 @@ password_strength/
 
 ## 🗺️ Roadmap — Dezvoltări Viitoare
 
-> Proiectul este în dezvoltare activă. Următoarele funcționalități sunt planificate:
+> Proiectul este în dezvoltare continua. Următoarele funcționalități sunt planificate:
 
 ### 🔐 Autentificare & Conturi Utilizatori
 - [ ] Sistem de înregistrare / login cu validare email
