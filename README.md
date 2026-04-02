@@ -74,7 +74,9 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 | # | Vulnerabilitate | Severitate | Status |
 
 - Realizat security audit complet — identificat și remediat 5 vulnerabilități reale (path traversal, RCE prin debug mode, XSS innerHTML, header injection, CORS wildcard) conform metodologiei OWASP
-- 
+- Rate limiting - max 10 req/min per IP pe /api/check, blocheaza atacuri automate, flask-limiter
+- Env variables(un standard obligatoriu in productie)
+- Deploy Railway cu HTTPS
 
 ---
 
