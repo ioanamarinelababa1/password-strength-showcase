@@ -13,6 +13,8 @@
 
 Proiectul include trei moduri de utilizare: CLI (terminal), GUI desktop (tkinter) și API web (Flask), toate bazate pe același motor central de analiză.
 
+Raport generat tip PDF cu design — logo PassSec, tabel criterii colorat, scor vizual, hash SHA-256, timestamp.
+
 ---
 
 ## ⚙️ Stack Tehnic
@@ -72,6 +74,7 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 | # | Vulnerabilitate | Severitate | Status |
 
 - Realizat security audit complet — identificat și remediat 5 vulnerabilități reale (path traversal, RCE prin debug mode, XSS innerHTML, header injection, CORS wildcard) conform metodologiei OWASP
+- 
 
 ---
 
