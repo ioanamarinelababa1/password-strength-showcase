@@ -83,6 +83,19 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 - Rate limiting - max 10 req/min per IP pe /api/check, blocheaza atacuri automate, flask-limiter(abuse prevention)
 - Env variables(un standard obligatoriu in productie)
 - Deploy Railway cu HTTPS
+- Security logging - RotatingFileHandler
+
+---
+
+## 🔍 CVE Security Scan
+
+Audit de dependențe rulat cu **pip-audit** — zero vulnerabilități cunoscute detectate 
+în toate pachetele instalate.
+
+| Tool | Rezultat | Data |
+|------|----------|------|
+| pip-audit | 0 vulnerabilități CVE | Aprilie 2026 |
+| OWASP audit manual | 5 vulnerabilități remediate | Aprilie 2026 |
 
 ---
 
