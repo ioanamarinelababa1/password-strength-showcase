@@ -1,4 +1,4 @@
-# 🛡️ Password Strength Checker v3.0
+# Password Strength Checker v3.0
 ### Cybersecurity Project — Python · Flask · Regex · Entropy · SHA-256 
 
 ---
@@ -8,11 +8,11 @@ Aplicația rulează live pe Railway cu HTTPS automat — accesibilă din orice b
 
 ---
 
-> ⚠️ **Status: In Development** — Proiect activ, în continuă îmbunătățire.
+> **Status: In Development** — Proiect activ, în continuă îmbunătățire.
 
 ---
 
-## 📌 Despre Proiect
+## Despre Proiect
 
 **Password Strength Checker** este un instrument de analiză a securității parolelor, construit ca proiect de cybersecurity aplicat. Analizează parole pe baza unor criterii reale de securitate, calculate matematic, și oferă feedback detaliat utilizatorului.
 
@@ -22,7 +22,7 @@ Raport generat tip PDF cu design — logo PassSec, tabel criterii colorat, scor 
 
 ---
 
-## ⚙️ Stack Tehnic
+## Stack Tehnic
 
 | Component | Tehnologie |
 |-----------|-----------|
@@ -37,7 +37,7 @@ Raport generat tip PDF cu design — logo PassSec, tabel criterii colorat, scor 
 
 ---
 
-## 🔍 Ce Analizează
+## Ce Analizează
 
 Motorul de analiză rulează **10 verificări** pe fiecare parolă:
 
@@ -65,7 +65,7 @@ Referință NIST: 60+ biți = Puternică | 128+ biți = Crypto-grade
 ### Estimare Timp Brute-Force
 Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 
-## 📡 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Descriere |
 |--------|----------|-----------|
@@ -99,12 +99,12 @@ Audit de dependențe rulat cu **pip-audit** — zero vulnerabilități cunoscute
 
 ---
 
-### 🔑 Integrări API
+### Integrări API
 - Integrat HaveIBeenPwned API cu k-anonymity — verificare parolă față de 600M+ breach-uri reale fără ca parola să părăsească serverul, cu reziliență la erori de rețea
 
 ---
 
-## 📁 Structura Proiectului
+## Structura Proiectului
 
 password_strength/
 ├── checker.py                  # Motor principal — regex, entropie, rockyou, HIBP
@@ -134,11 +134,11 @@ Documentație completă a API-ului disponibilă la:
 
 ---
 
-## 🗺️ Roadmap — Dezvoltări Viitoare
+## Roadmap — Dezvoltări Viitoare
 
 > Proiectul este în dezvoltare continua. Următoarele funcționalități sunt planificate:
 
-### 🔐 Autentificare & Conturi Utilizatori
+### Autentificare & Conturi Utilizatori
 - [ ] Sistem de înregistrare / login cu validare email
 - [ ] Confirmare cont prin link de activare (email verification)
 - [ ] Resetare parolă prin email cu token unic cu expirare (15 min)
@@ -146,14 +146,14 @@ Documentație completă a API-ului disponibilă la:
 - [ ] Sesiuni securizate cu JWT (JSON Web Tokens)
 - [ ] Logout din toate dispozitivele (session invalidation)
 
-### 🗄️ Bază de Date & Stocare
+### Bază de Date & Stocare
 - [ ] Integrare PostgreSQL pentru stocarea utilizatorilor
 - [ ] Parole stocate EXCLUSIV ca hash bcrypt (nu SHA-256 simplu)
 - [ ] Salt unic per parolă (anti rainbow-table attacks)
 - [ ] Audit log — istoricul analizelor per utilizator
 - [ ] Row Level Security (RLS) — fiecare user vede doar datele sale
 
-### 🌐 Securitate Web
+### Securitate Web
 - [ ] Rate limiting — max 5 încercări/minut per IP (anti brute-force)
 - [ ] Exponential backoff la login eșuat
 - [ ] CAPTCHA după 3 încercări consecutive eșuate
@@ -162,16 +162,16 @@ Documentație completă a API-ului disponibilă la:
 - [ ] Protecție CSRF pe toate formularele
 - [ ] Input sanitization — prevenire SQL Injection & XSS
 
-### 🔑 Integrări API
+### Integrări API
 - [ ] Notificare email automată dacă parola utilizatorului apare într-un breach nou
 - [ ] Webhook support pentru integrare în aplicații terțe
 
-### 📊 Dashboard & Analytics
+### Dashboard & Analytics
 - [ ] Panou de administrare cu statistici de utilizare
 - [ ] Grafice: distribuția scorurilor, parole blocate, breach-uri detectate
 - [ ] Export rapoarte în PDF și CSV
 
-### 🧪 Penetration Testing (Faza Finală Pre-Lansare)
+### Penetration Testing (Faza Finală Pre-Lansare)
 - [ ] **OWASP Top 10** — audit complet înainte de deployment
 - [ ] SQL Injection testing (SQLMap)
 - [ ] XSS vulnerability scanning (DAST)
@@ -181,7 +181,7 @@ Documentație completă a API-ului disponibilă la:
 - [ ] Dependency vulnerability scan (`pip audit`, `safety`)
 - [ ] Docker container security scan
 
-### 🐳 Infrastructure & Deployment
+### Infrastructure & Deployment
 - [ ] Containerizare completă cu Docker Compose
 - [ ] CI/CD pipeline (GitHub Actions)
 - [ ] Environment variables pentru toate secretele (nu hardcodat)
@@ -190,7 +190,7 @@ Documentație completă a API-ului disponibilă la:
 
 ---
 
-## 🔒 Principii de Securitate Aplicate
+## Principii de Securitate Aplicate
 
 - **Parole stocate ca hash** — niciodată în clar, nici în rapoarte
 - **k-anonymity** — verificarea HIBP nu expune parola serverului extern
@@ -200,7 +200,7 @@ Documentație completă a API-ului disponibilă la:
 
 ---
 
-## 📄 Licență
+## Licență
 
 Proiect personal în scop educațional și de demonstrație. Toate drepturile rezervate.
 
