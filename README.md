@@ -20,6 +20,8 @@ Proiectul include trei moduri de utilizare: CLI (terminal), GUI desktop (tkinter
 
 Raport generat tip PDF cu design — logo PassSec, tabel criterii colorat, scor vizual, hash SHA-256, timestamp.
 
+Panou de statistici ale sesiunilor în timp real — nu este necesară o bază de date, nu este nevoie de un cont.
+
 ---
 
 ## Stack Tehnic
