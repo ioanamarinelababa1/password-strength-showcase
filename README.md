@@ -76,7 +76,7 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 
 ---
 
-| # | Vulnerabilitate | Severitate | Status |
+ ## | Vulnerabilitate | Severitate | Status |
 
 - Realizat security audit complet — identificat și remediat 5 vulnerabilități reale (path traversal, RCE prin debug mode, XSS innerHTML, header injection, CORS wildcard) conform metodologiei OWASP
 - Security headers — CSP, HSTS, X-Frame-Options
@@ -87,7 +87,7 @@ Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
 
 ---
 
-## 🔍 CVE Security Scan
+## CVE Security Scan
 
 Audit de dependențe rulat cu **pip-audit** — zero vulnerabilități cunoscute detectate 
 în toate pachetele instalate.
@@ -118,6 +118,19 @@ password_strength/
 ├── data/
 │   └── rockyou.txt             # 14M parole compromise (descărcat separat)
 └── rapoarte/                   # Rapoarte .txt generate (auto-creat)
+
+---
+
+## API Documentation
+
+Documentație completă a API-ului disponibilă la:
+
+**[https://passsec.up.railway.app/api/docs](https://passsec.up.railway.app/api/docs)**
+
+- Toate endpoint-urile documentate cu request/response examples
+- Coduri de eroare pentru fiecare endpoint
+- Rate limiting info
+- HIBP k-anonymity model explicat
 
 ---
 
