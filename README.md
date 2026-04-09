@@ -136,6 +136,27 @@ Documentație completă a API-ului disponibilă la:
 
 ---
 
+## Verificare în bloc a parolelor
+
+Analizează până la **10 parole într-o singură solicitare API** — concepută pentru
+dezvoltatori și companii care integrează PassSec în propriile sisteme.
+
+```bash
+curl -X POST https://passsec.up.railway.app/api/bulk-check \
+-H "Content-Type: application/json" \
+-d '{"passwords": ["password", "MyPass123!", "abc123"]}'
+```
+
+**Cazuri de utilizare:**
+- Companii care verifică parolele angajaților la resetare
+- Aplicațiile web blochează parolele slabe la înregistrare
+- Echipele de securitate auditează politicile de parole
+- Dezvoltatori care integrează PassSec în aplicațiile existente
+
+**Limite:** Max 10 parole per solicitare · 3 solicitări/min per IP · 500 caractere per parolă
+
+---
+
 ## Roadmap — Dezvoltări Viitoare
 
 > Proiectul este în dezvoltare continua. Următoarele funcționalități sunt planificate:
