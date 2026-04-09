@@ -157,6 +157,19 @@ curl -X POST https://passsec.up.railway.app/api/bulk-check \
 
 ---
 
+## CI/CD Pipeline — GitHub Actions
+
+Pipeline automat de securitate rulat la fiecare push pe GitHub:
+
+| Job | Ce verifică | Când rulează |
+|-----|------------|--------------|
+| Security Audit | pip-audit — zero CVE-uri în dependențe | La fiecare push |
+| API Integration Tests | /api/status răspunde "online", /api/check returnează scor valid | După Security Audit |
+
+**Dacă un test pică — codul NU ajunge live pe Railway.**
+
+---
+
 ## Roadmap — Dezvoltări Viitoare
 
 > Proiectul este în dezvoltare continua. Următoarele funcționalități sunt planificate:
