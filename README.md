@@ -8,7 +8,7 @@ Aplicația rulează live pe Railway cu HTTPS automat — accesibilă din orice b
 
 ---
 
-## Screenshots if two passwords analyzed
+## Screenshots - how two passwords have been analyzed
 
 <img width="1536" height="1024" alt="Password strength analysis comparison" src="https://github.com/user-attachments/assets/25819533-976f-46dc-82b6-43f2c89ee615" />
 
