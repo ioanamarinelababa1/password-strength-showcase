@@ -201,6 +201,13 @@ Automatic security pipeline run on every push to GitHub:
 
 ---
 
+## Limitations
+
+- Does not account for user-specific patterns (names, dates)
+- Crack time is an estimation based on theoretical models
+
+---
+
 ## Roadmap — Future Developments
 
 > The project is in continuous development. The following features are planned:
