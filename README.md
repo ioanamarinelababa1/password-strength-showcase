@@ -7,7 +7,7 @@ It provides real-time feedback and highlights compromised passwords using extern
 ---
 
 🌐 **Live Demo:** https://passsec.up.railway.app
-Aplicația rulează live pe Railway cu HTTPS automat — accesibilă din orice browser, fără instalare locală.
+The application runs live on Railway with automatic HTTPS — accessible from any browser, without local installation.
 
 ---
 
@@ -27,237 +27,229 @@ Aplicația rulează live pe Railway cu HTTPS automat — accesibilă din orice b
 
 ---
 
-> **Status: In Development** — Proiect activ, în continuă îmbunătățire.
-
+> **Status: In Development** — Active project, constantly improving.
 ---
 
-## Despre Proiect
+## About the Project
 
-**Password Strength Checker** este un instrument de analiză a securității parolelor, construit ca proiect de cybersecurity aplicat. Analizează parole pe baza unor criterii reale de securitate, calculate matematic, și oferă feedback detaliat utilizatorului.
+**Password Strength Checker** is a password strength analysis tool, built as an applied cybersecurity project. It analyzes passwords based on real security criteria, calculated mathematically, and provides detailed feedback to the user.
 
-Proiectul include trei moduri de utilizare: CLI (terminal), GUI desktop (tkinter) și API web (Flask), toate bazate pe același motor central de analiză.
+The project includes three modes of use: CLI (terminal), desktop GUI (tkinter) and web API (Flask), all based on the same central analysis engine.
 
-Raport generat tip PDF cu design — logo PassSec, tabel criterii colorat, scor vizual, hash SHA-256, timestamp.
+Generated PDF report with design — PassSec logo, colored criteria table, visual score, SHA-256 hash, timestamp.
 
-Panou de statistici ale sesiunilor în timp real — nu este necesară o bază de date, nu este nevoie de un cont.
-
+Real-time session statistics dashboard — no database required, no account required.
 ---
 
-## Stack Tehnic
+## Tech Stack
 
-| Component | Tehnologie |
-|-----------|-----------|
-| Motor analiză | Python 3.14 + `re` (regex) |
-| Calcul entropie | Shannon Entropy — `math.log2` |
+| Component | Technology |
+|------------|-----------|
+| Analysis Engine | Python 3.14 + `re` (regex) |
+| Entropy Calculation | Shannon Entropy — `math.log2` |
 | Hashing | SHA-256 via `hashlib` |
 | API | Flask 3.1 + Flask-CORS |
-| GUI Desktop | tkinter |
-| Frontend Web | HTML5 · CSS3 · Vanilla JS |
-| Parole compromise | rockyou.txt (14M+ parole) |
-| Standard securitate | NIST SP 800-63B |
+| Desktop GUI | tkinter |
+| Web Frontend | HTML5 · CSS3 · Vanilla JS |
+| Compromised Passwords | rockyou.txt (14M+ passwords) |
+| Security Standard | NIST SP 800-63B |
 
 ---
 
-## Ce Analizează
+## What It Analyzes
 
-Motorul de analiză rulează **10 verificări** pe fiecare parolă:
+The analysis engine runs **10 checks** on each password:
 
-| # | Criteriu | Tip | Puncte |
-|---|----------|-----|--------|
-| 1 | Verificare rockyou.txt (14M parole furate) | Blocare automată | — |
-| 2 | Lungime progresivă (8 / 12 / 16 / 20+ chars) | Bonus | +10 → +30 |
-| 3 | Litere mari `[A-Z]` | Bonus | +10 |
-| 4 | Litere mici `[a-z]` | Bonus | +10 |
-| 5 | Cifre `[0-9]` | Bonus | +10 |
-| 6 | Simboluri speciale `[!@#$%...]` | Bonus | +20 |
-| 7 | Repetiții (`aaa`, `111`) detectate cu regex | Penalizare | -15 |
-| 8 | Secvențe numerice (`123`, `456`) | Penalizare | -10 |
-| 9 | Pattern tastatură (`qwerty`, `asdf`) | Penalizare | -10 |
-| 10 | Diversitate maximă (toate 4 tipurile) | Bonus | +20 |
+| # | Criterion | Type | Points |
+|---|-----|-----|----|
+| 1 | Check rockyou.txt (14M stolen passwords) | Auto-block | — |
+| 2 | Progressive length (8 / 12 / 16 / 20+ chars) | Bonus | +10 → +30 |
+| 3 | Uppercase `[A-Z]` | Bonus | +10 |
+| 4 | Lowercase `[a-z]` | Bonus | +10 |
+| 5 | Digits `[0-9]` | Bonus | +10 |
+| 6 | Special symbols `[!@#$%...]` | Bonus | +20 |
+| 7 | Repetitions (`aaa`, `111`) detected with regex | Penalty | -15 |
+| 8 | Numeric sequences (`123`, `456`) | Penalty | -10 |
+| 9 | Keyboard Pattern (`qwerty`, `asdf`) | Penalty | -10 |
+| 10 | Maximum Diversity (all 4 types) | Bonus | +20 |
 
-### Calcul Entropie Shannon
+### Shannon Entropy Calculation
 
 E = log2(A ^ L)
-A = dimensiunea alfabetului efectiv
-L = lungimea parolei
+A = effective alphabet size
+L = password length
 
-Referință NIST: 60+ biți = Puternică | 128+ biți = Crypto-grade
+NIST Reference: 60+ bits = Strong | 128+ bits = Crypto-grade
 
-### Estimare Timp Brute-Force
-Bazat pe **RTX 4090** — 164 miliarde hashes/secundă (benchmark real).
+### Brute-Force Time Estimate
+Based on **RTX 4090** — 164 billion hashes/second (real benchmark).
 
 ## API Endpoints
 
-| Method | Endpoint | Descriere |
-|--------|----------|-----------|
-| `POST` | `/api/check` | Analizează o parolă |
-| `POST` | `/api/raport` | Generează raport `.txt` |
-| `GET` | `/api/download/<file>` | Descarcă raportul |
+| Method | Endpoint | Description |
+|--------|-----------|----------|
+| `POST` | `/api/check` | Analyze a password |
+| `POST` | `/api/report` | Generate `.txt` report |
+| `GET` | `/api/download/<file>` | Download report |
 | `GET` | `/api/status` | Health check server |
 
 ---
 
- ## | Vulnerabilitate | Severitate | Status |
+## | Vulnerability | Severity | Status |
 
-- Realizat security audit complet — identificat și remediat 5 vulnerabilități reale (path traversal, RCE prin debug mode, XSS innerHTML, header injection, CORS wildcard) conform metodologiei OWASP
+- Complete security audit performed — identified and fixed 5 real vulnerabilities (path traversal, RCE via debug mode, XSS innerHTML, header injection, CORS wildcard) according to OWASP methodology
 - Security headers — CSP, HSTS, X-Frame-Options
-- Rate limiting - max 10 req/min per IP pe /api/check, blocheaza atacuri automate, flask-limiter(abuse prevention)
-- Env variables(un standard obligatoriu in productie)
-- Deploy Railway cu HTTPS
+- Rate limiting - max 10 req/min per IP on /api/check, blocks automated attacks, flask-limiter(abuse prevention)
+- Env variables (a mandatory standard in production)
+- Deploy Railway with HTTPS
 - Security logging - RotatingFileHandler
 
 ---
 
 ## CVE Security Scan
 
-Audit de dependențe rulat cu **pip-audit** — zero vulnerabilități cunoscute detectate 
-în toate pachetele instalate.
+Dependency audit run with **pip-audit** — zero known vulnerabilities detected 
+in all installed packages.
 
-| Tool | Rezultat | Data |
-|------|----------|------|
-| pip-audit | 0 vulnerabilități CVE | Aprilie 2026 |
-| OWASP audit manual | 5 vulnerabilități remediate | Aprilie 2026 |
-
----
-
-### Integrări API
-- Integrat HaveIBeenPwned API cu k-anonymity — verificare parolă față de 600M+ breach-uri reale fără ca parola să părăsească serverul, cu reziliență la erori de rețea
+| Tool | Result | Date |
+|------|-----|------|
+| pip-audit | 0 CVE vulnerabilities | April 2026 |
+| OWASP Manual Audit | 5 Vulnerabilities Fixed | April 2026 |
 
 ---
 
-## Structura Proiectului
+### API Integrations
+- Integrated HaveIBeenPwned API with k-anonymity — password checking against 600M+ real breaches without the password ever leaving the server, with resilience to network failures
+
+---
+
+## Project Structure
 
 password_strength/
-├── checker.py                  # Motor principal — regex, entropie, rockyou, HIBP
-├── app.py                      # Flask API server — securizat v3.1
-├── gui.py                      # Interfață grafică tkinter
-├── password_checker.html       # Interfață web dark-theme cybersecurity
-├── Procfile                    # Configurare deployment Railway
-├── requirements.txt            # Dependințe Python
-├── README.md                   # Documentație proiect
-├── venv/                       # Virtual environment (local, nu pe GitHub)
+├── checker.py # Main engine — regex, entropy, rockyou, HIBP
+├── app.py # Flask API server — v3.1 secure
+├── gui.py # tkinter GUI
+├── password_checker.html # Dark-theme cybersecurity web interface
+├── Procfile # Railway deployment configuration
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+├── venv/ # Virtual environment (local, not on GitHub)
 ├── data/
-│   └── rockyou.txt             # 14M parole compromise (descărcat separat)
-└── rapoarte/                   # Rapoarte .txt generate (auto-creat)
+│ └── rockyou.txt # 14M compromised passwords (downloaded separately)
+└── reports/ # Generated .txt reports (self-created)
 
 ---
 
 ## API Documentation
 
-Documentație completă a API-ului disponibilă la:
+Full API documentation available at:
 
 **[https://passsec.up.railway.app/api/docs](https://passsec.up.railway.app/api/docs)**
 
-- Toate endpoint-urile documentate cu request/response examples
-- Coduri de eroare pentru fiecare endpoint
+- All endpoints documented with request/response examples
+- Error codes for each endpoint
 - Rate limiting info
-- HIBP k-anonymity model explicat
+- HIBP k-anonymity model explained
 
 ---
 
-## Verificare în bloc a parolelor
+## Bulk Password Verification
 
-Analizează până la **10 parole într-o singură solicitare API** — concepută pentru
-dezvoltatori și companii care integrează PassSec în propriile sisteme.
+Analyzes up to **10 passwords in a single API request** — designed for
+developers and companies integrating PassSec into their own systems.
 
-```bash
-curl -X POST https://passsec.up.railway.app/api/bulk-check \
--H "Content-Type: application/json" \
--d '{"passwords": ["password", "MyPass123!", "abc123"]}'
-```
+**Use cases:**
+- Companies checking employee passwords upon reset
+- Web applications blocking weak passwords upon signup
+- Security teams auditing password policies
+- Developers integrating PassSec into existing applications
 
-**Cazuri de utilizare:**
-- Companii care verifică parolele angajaților la resetare
-- Aplicațiile web blochează parolele slabe la înregistrare
-- Echipele de securitate auditează politicile de parole
-- Dezvoltatori care integrează PassSec în aplicațiile existente
-
-**Limite:** Max 10 parole per solicitare · 3 solicitări/min per IP · 500 caractere per parolă
+**Limits:** Max 10 passwords per request · 3 requests/min per IP · 500 characters per password
 
 ---
 
 ## CI/CD Pipeline — GitHub Actions
 
-Pipeline automat de securitate rulat la fiecare push pe GitHub:
+Automatic security pipeline run on every push to GitHub:
 
-| Job | Ce verifică | Când rulează |
-|-----|------------|--------------|
-| Security Audit | pip-audit — zero CVE-uri în dependențe | La fiecare push |
-| API Integration Tests | /api/status răspunde "online", /api/check returnează scor valid | După Security Audit |
+| Job | What it checks | When it runs |
+|----|------------|--------------|
+| Security Audit | pip-audit — zero CVEs in dependencies | On every push |
+| API Integration Tests | /api/status responds "online", /api/check returns valid score | After Security Audit |
 
-**Dacă un test pică — codul NU ajunge live pe Railway.**
+**If a test fails — the code does NOT go live on Railway.**
 
 ---
 
-## Roadmap — Dezvoltări Viitoare
+## Roadmap — Future Developments
 
-> Proiectul este în dezvoltare continua. Următoarele funcționalități sunt planificate:
+> The project is in continuous development. The following features are planned:
 
-### Autentificare & Conturi Utilizatori
-- [ ] Sistem de înregistrare / login cu validare email
-- [ ] Confirmare cont prin link de activare (email verification)
-- [ ] Resetare parolă prin email cu token unic cu expirare (15 min)
+### Authentication & User Accounts
+- [ ] Registration / login system with email validation
+- [ ] Account confirmation via activation link (email verification)
+- [ ] Password reset via email with unique token with expiration (15 min)
 - [ ] Two-Factor Authentication (2FA) via TOTP (Google Authenticator)
-- [ ] Sesiuni securizate cu JWT (JSON Web Tokens)
-- [ ] Logout din toate dispozitivele (session invalidation)
+- [ ] Secured sessions with JWT (JSON Web Tokens)
+- [ ] Logout from all devices (session invalidation)
 
-### Bază de Date & Stocare
-- [ ] Integrare PostgreSQL pentru stocarea utilizatorilor
-- [ ] Parole stocate EXCLUSIV ca hash bcrypt (nu SHA-256 simplu)
-- [ ] Salt unic per parolă (anti rainbow-table attacks)
-- [ ] Audit log — istoricul analizelor per utilizator
-- [ ] Row Level Security (RLS) — fiecare user vede doar datele sale
+### Database & Storage
+- [ ] PostgreSQL integration for user storage
+- [ ] Passwords stored EXCLUSIVELY as bcrypt hash (not simple SHA-256)
+- [ ] Unique hash per password (anti rainbow-table attacks)
+- [ ] Audit log — analysis history per user
+- [ ] Row Level Security (RLS) — each user sees only their data
 
-### Securitate Web
-- [ ] Rate limiting — max 5 încercări/minut per IP (anti brute-force)
-- [ ] Exponential backoff la login eșuat
-- [ ] CAPTCHA după 3 încercări consecutive eșuate
-- [ ] HTTPS obligatoriu (SSL/TLS certificate)
-- [ ] Headers de securitate: CSP, HSTS, X-Frame-Options
-- [ ] Protecție CSRF pe toate formularele
-- [ ] Input sanitization — prevenire SQL Injection & XSS
+### Web Security
+- [ ] Rate limiting — max 5 attempts/minute per IP (anti brute-force)
+- [ ] Exponential backoff on failed login
+- [ ] CAPTCHA after 3 consecutive failed attempts
+- [ ] HTTPS required (SSL/TLS certified)
+- [ ] Security headers: CSP, HSTS, X-Frame-Options
+- [ ] CSRF protection on all forms
+- [ ] Input sanitization — SQL Injection & XSS prevention
 
-### Integrări API
-- [ ] Notificare email automată dacă parola utilizatorului apare într-un breach nou
-- [ ] Webhook support pentru integrare în aplicații terțe
+### API Integrations
+- [ ] Automatic email notification if user password appears in a new breach
+- [ ] Webhook support for integration into third-party applications
 
 ### Dashboard & Analytics
-- [ ] Panou de administrare cu statistici de utilizare
-- [ ] Grafice: distribuția scorurilor, parole blocate, breach-uri detectate
-- [ ] Export rapoarte în PDF și CSV
+- [ ] Admin panel with usage statistics
+- [ ] Graphs: score distribution, blocked passwords, detected breaches
+- [ ] Export reports to PDF and CSV
 
-### Penetration Testing (Faza Finală Pre-Lansare)
-- [ ] **OWASP Top 10** — audit complet înainte de deployment
+### Penetration Testing (Final Pre-Release Phase)
+- [ ] **OWASP Top 10** — full audit before deployment
 - [ ] SQL Injection testing (SQLMap)
 - [ ] XSS vulnerability scanning (DAST)
 - [ ] Brute-force resistance testing
 - [ ] Session management audit
 - [ ] API security testing (Postman + Burp Suite)
-- [ ] Dependency vulnerability scan (`pip audit`, `safety`)
+- [ ] Dependency vulnerability scan (`pip audit', `safety')
 - [ ] Docker container security scan
 
 ### Infrastructure & Deployment
-- [ ] Containerizare completă cu Docker Compose
+- [ ] Full containerization with Docker Compose
 - [ ] CI/CD pipeline (GitHub Actions)
-- [ ] Environment variables pentru toate secretele (nu hardcodat)
-- [ ] Deployment pe cloud (Railway / Render / AWS)
-- [ ] Monitoring & alerting (uptime, erori, securitate)
+- [ ] Environment variables for all secrets (not hardcoded)
+- [ ] Cloud deployment (Railway / Render / AWS)
+- [ ] Monitoring & alerting (uptime, errors, security)
 
 ---
 
-## Principii de Securitate Aplicate
+## Security Principles Applied
 
-- **Parole stocate ca hash** — niciodată în clar, nici în rapoarte
-- **k-anonymity** — verificarea HIBP nu expune parola serverului extern
-- **Defense in depth** — validare pe 3 niveluri: regex, dictionary, entropie
-- **NIST SP 800-63B** — standard american de referință pentru autentificare
-- **Principle of least privilege** — fiecare componentă accesează minim necesar
+- **Passwords stored as hash** — never in clear, not in reports
+- **k-anonymity** — HIBP verification does not expose the password to the external server
+- **Defense in depth** — 3-level validation: regex, dictionary, entropy
+- **NIST SP 800-63B** — American reference standard for authentication
+- **Principle of least privilege** — each component accesses the minimum necessary
 
 ---
 
-## Licență
+## License
 
-Proiect personal în scop educațional și de demonstrație. Toate drepturile rezervate.
+Personal project for educational and demonstration purposes. All rights reserved.
 
 ---
 
