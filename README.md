@@ -118,6 +118,14 @@ in all installed packages.
 
 ---
 
+## Security considerations
+
+- No password is stored or logged
+- All checks are performed client-side or via secure APIs
+- Designed to prevent sensitive data leaks
+
+---
+
 ### API Integrations
 - Integrated HaveIBeenPwned API with k-anonymity — password checking against 600M+ real breaches without the password ever leaving the server, with resilience to network failures
 
