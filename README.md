@@ -1,8 +1,8 @@
 ## PassSec – Password Security Analyzer
 
-PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data.
+PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data. It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API).
 
-It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API).
+It helps users understand not just if a password is strong — but why.
 
 ---
 
@@ -27,12 +27,15 @@ The application runs live on Railway with automatic HTTPS — accessible from an
 
 ---
 
-> **Status: In Development** — Active project, constantly improving.
+## Why this project
+
+Weak passwords are one of the most common causes of security breaches.
+
+This project was built to simulate how real systems evaluate password strength and detect compromised credentials.
+
 ---
 
 ## About the Project
-
-**Password Strength Checker** is a password strength analysis tool, built as an applied cybersecurity project. It analyzes passwords based on real security criteria, calculated mathematically, and provides detailed feedback to the user.
 
 The project includes three modes of use: CLI (terminal), desktop GUI (tkinter) and web API (Flask), all based on the same central analysis engine.
 
@@ -186,6 +189,15 @@ Automatic security pipeline run on every push to GitHub:
 | API Integration Tests | /api/status responds "online", /api/check returns valid score | After Security Audit |
 
 **If a test fails — the code does NOT go live on Railway.**
+
+---
+
+## Technical Highlights
+
+- Entropy calculated based on character set size and length
+- Crack time estimated using brute-force models
+- Breach detection via HaveIBeenPwned API (k-anonymity model)
+- Real-time UI updates without storing user input
 
 ---
 
