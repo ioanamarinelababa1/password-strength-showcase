@@ -1,11 +1,24 @@
-# Password Strength Checker 
-### Cybersecurity Project v3.0 — Python · Flask · Regex · Entropy · SHA-256 
+## PassSec – Password Security Analyzer
+
+PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data.
+
+It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API).
 
 ---
 
 🌐 **Live Demo:** https://passsec.up.railway.app
 Aplicația rulează live pe Railway cu HTTPS automat — accesibilă din orice browser, fără instalare locală.
 
+---
+
+## How it works
+
+- Calculates password entropy
+- Detects character diversity (uppercase, lowercase, numbers, symbols)
+- Estimates crack time using brute-force models
+- Checks if password appears in known data breaches (HIBP API)
+- Generates a security score (0–100)
+  
 ---
 
 ## Screenshots - how two passwords have been analyzed
