@@ -139,17 +139,20 @@ in all installed packages.
 ## Project Structure
 
 password_strength/
-├── checker.py # Main engine — regex, entropy, rockyou, HIBP
-├── app.py # Flask API server — v3.1 secure
-├── gui.py # tkinter GUI
-├── password_checker.html # Dark-theme cybersecurity web interface
-├── Procfile # Railway deployment configuration
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation
-├── venv/ # Virtual environment (local, not on GitHub)
+├── checker.py              # Core engine — regex, entropy, rockyou, HIBP
+├── app.py                  # Flask API server — secured v3.2
+├── pdf_report.py           # PDF report generator — ReportLab
+├── gui.py                  # tkinter desktop GUI
+├── password_checker.html   # Web interface — dark cybersecurity theme
+├── about.html              # How It Works page — entropy, k-anonymity explained
+├── Procfile                # Railway deployment config
+├── requirements.txt        # Python dependencies
+├── fonts/                  # DejaVuSans TTF (bundled)
+├── .github/workflows/
+│   └── security.yml        # GitHub Actions CI/CD pipeline
 ├── data/
-│ └── rockyou.txt # 14M compromised passwords (downloaded separately)
-└── reports/ # Generated .txt reports (self-created)
+│   └── rockyou.txt         # 14M compromised passwords (download separately)
+└── rapoarte/               # Generated PDF reports (auto-created)
 
 ---
 
