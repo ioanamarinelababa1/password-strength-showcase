@@ -1,4 +1,4 @@
-## PassSec – Password Security Analyzer
+# PassSec – Password Security Analyzer v3.2
 
 PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data. It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API).
 
