@@ -87,15 +87,17 @@ NIST Reference: 60+ bits = Strong | 128+ bits = Crypto-grade
 ### Brute-Force Time Estimate
 Based on **RTX 4090** — 164 billion hashes/second (real benchmark).
 
-## API Endpoints
+## API endpoints
 
 | Method | Endpoint | Description |
-|--------|-----------|----------|
-| `POST` | `/api/check` | Analyze a password |
-| `POST` | `/api/report` | Generate `.txt` report |
-| `GET` | `/api/download/<file>` | Download report |
-| `GET` | `/api/status` | Health check server |
-
+|--------|----------|-------------|
+| `POST` | `/api/check` | Analyze a password — full security report |
+| `POST` | `/api/bulk-check` | Analyze up to 10 passwords per request |
+| `POST` | `/api/raport` | Generate PDF report and return download link |
+| `GET` | `/api/download/<file>` | Download generated PDF report |
+| `GET` | `/api/status` | Health check — version, status |
+| `GET` | `/api/docs` | Interactive API documentation page |
+| `GET` | `/api/about` | How PassSec Works — security architecture explained |
 ---
 
 ## | Vulnerability | Severity | Status |
