@@ -199,6 +199,19 @@ Data stored in JavaScript memory only — resets on page refresh, never sent to 
 
 ---
 
+## PDF Reports
+
+Professional PDF reports generated with **ReportLab**:
+- White background (print-friendly)
+- Dark header with PassSec logo and cyan accent
+- Metadata table — masked password, length, character types
+- Result card — level, score, entropy, crack time
+- Color-coded criteria table — PASS (green) / FAIL (red)
+- SHA-256 hash in monospaced font
+- Full Romanian diacritics support via DejaVuSans TTF
+
+---
+
 ## CI/CD Pipeline — GitHub Actions
 
 Automatic security pipeline run on every push to GitHub:
