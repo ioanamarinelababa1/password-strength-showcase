@@ -313,4 +313,4 @@ Personal project for educational and demonstration purposes. All rights reserved
 
 ---
 
-*Construit cu Python pe MacBook · VS Code · GitHub*
+*Built with Python on MacBook M1 · VS Code · iTerm2 · GitHub*
