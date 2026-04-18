@@ -1,12 +1,15 @@
 # PassSec – Password Security Analyzer v3.2
 
-PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data. It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API).
-
-It helps users understand not just if a password is strong — but why.
+PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data. It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API). It helps users understand not just if a password is strong — but **why**.
 
 ---
 
-## **Live Demo:** https://passsec.up.railway.app
+**Live Demo:** [https://passsec.up.railway.app](https://passsec.up.railway.app)
+
+**API Docs:** [https://passsec.up.railway.app/api/docs](https://passsec.up.railway.app/api/docs)
+
+**How It Works:** [https://passsec.up.railway.app/about](https://passsec.up.railway.app/about)
+
 The application runs live on Railway with automatic HTTPS — accessible from any browser, without local installation.
 
 ---
