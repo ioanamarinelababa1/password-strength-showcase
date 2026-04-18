@@ -184,6 +184,21 @@ developers and companies integrating PassSec into their own systems.
 
 ---
 
+## Session Dashboard
+
+Real-time session statistics — no database, no account needed.
+
+Tracks automatically after first analysis:
+- Total passwords analyzed in session
+- Compromised passwords detected (rockyou + HIBP)
+- Best and worst score in session
+- Score distribution per level (WEAK / AVERAGE / GOOD / STRONG / FORTRESS)
+- Last 5 analyses — masked password + level + score + timestamp
+
+Data stored in JavaScript memory only — resets on page refresh, never sent to server.
+
+---
+
 ## CI/CD Pipeline — GitHub Actions
 
 Automatic security pipeline run on every push to GitHub:
