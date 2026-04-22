@@ -1,15 +1,14 @@
-# PassSec – Password Security Analyzer v3.2
+![Security CI](https://github.com/ioanamarinelababa1/password_strength/actions/workflows/security.yml/badge.svg)
 
-PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data. It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API). It helps users understand not just if a password is strong — but **why**.
+## PassSec – Password Security Analyzer
+
+PassSec is a cybersecurity-focused web application that analyzes password strength using entropy calculation, pattern detection, and real-world breach data. It provides real-time feedback and highlights compromised passwords using external threat intelligence (HaveIBeenPwned API).
+
+It helps users understand not just if a password is strong — but why.
 
 ---
 
-**Live Demo:** [https://passsec.up.railway.app](https://passsec.up.railway.app)
-
-**API Docs:** [https://passsec.up.railway.app/api/docs](https://passsec.up.railway.app/api/docs)
-
-**How It Works:** [https://passsec.up.railway.app/about](https://passsec.up.railway.app/about)
-
+## **Live Demo:** https://passsec.up.railway.app
 The application runs live on Railway with automatic HTTPS — accessible from any browser, without local installation.
 
 ---
@@ -45,20 +44,6 @@ The project includes three modes of use: CLI (terminal), desktop GUI (tkinter) a
 Generated PDF report with design — PassSec logo, colored criteria table, visual score, SHA-256 hash, timestamp.
 
 Real-time session statistics dashboard — no database required, no account required.
----
-
-## Tech Stack
-
-| Component | Technology |
-|------------|-----------|
-| Analysis Engine | Python 3.14 + `re` (regex) |
-| Entropy Calculation | Shannon Entropy — `math.log2` |
-| Hashing | SHA-256 via `hashlib` |
-| API | Flask 3.1 + Flask-CORS |
-| Desktop GUI | tkinter |
-| Web Frontend | HTML5 · CSS3 · Vanilla JS |
-| Compromised Passwords | rockyou.txt (14M+ passwords) |
-| Security Standard | NIST SP 800-63B |
 
 ---
 
@@ -90,17 +75,25 @@ NIST Reference: 60+ bits = Strong | 128+ bits = Crypto-grade
 ### Brute-Force Time Estimate
 Based on **RTX 4090** — 164 billion hashes/second (real benchmark).
 
-## API endpoints
+---
+
+<img width="1684" height="934" alt="passsec1" src="https://github.com/user-attachments/assets/d3d152d0-131e-40c9-a84c-4db252bf00d0" />
+
+---
+
+## API Endpoints
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/check` | Analyze a password — full security report |
-| `POST` | `/api/bulk-check` | Analyze up to 10 passwords per request |
-| `POST` | `/api/raport` | Generate PDF report and return download link |
-| `GET` | `/api/download/<file>` | Download generated PDF report |
-| `GET` | `/api/status` | Health check — version, status |
-| `GET` | `/api/docs` | Interactive API documentation page |
-| `GET` | `/api/about` | How PassSec Works — security architecture explained |
+|--------|-----------|----------|
+| `POST` | `/api/check` | Analyze a password |
+| `POST` | `/api/report` | Generate `.txt` report |
+| `GET` | `/api/download/<file>` | Download report |
+| `GET` | `/api/status` | Health check server |
+
+---
+
+<img width="1735" height="906" alt="passsec2" src="https://github.com/user-attachments/assets/7338eee4-9c42-451f-882a-d76a85951276" />
+
 ---
 
 ## | Vulnerability | Severity | Status |
@@ -142,20 +135,17 @@ in all installed packages.
 ## Project Structure
 
 password_strength/
-├── checker.py              # Core engine — regex, entropy, rockyou, HIBP
-├── app.py                  # Flask API server — secured v3.2
-├── pdf_report.py           # PDF report generator — ReportLab
-├── gui.py                  # tkinter desktop GUI
-├── password_checker.html   # Web interface — dark cybersecurity theme
-├── about.html              # How It Works page — entropy, k-anonymity explained
-├── Procfile                # Railway deployment config
-├── requirements.txt        # Python dependencies
-├── fonts/                  # DejaVuSans TTF (bundled)
-├── .github/workflows/
-│   └── security.yml        # GitHub Actions CI/CD pipeline
+├── checker.py # Main engine — regex, entropy, rockyou, HIBP
+├── app.py # Flask API server — v3.1 secure
+├── gui.py # tkinter GUI
+├── password_checker.html # Dark-theme cybersecurity web interface
+├── Procfile # Railway deployment configuration
+├── requirements.txt # Python dependencies
+├── README.md # Project documentation
+├── venv/ # Virtual environment (local, not on GitHub)
 ├── data/
-│   └── rockyou.txt         # 14M compromised passwords (download separately)
-└── rapoarte/               # Generated PDF reports (auto-created)
+│ └── rockyou.txt # 14M compromised passwords (downloaded separately)
+└── reports/ # Generated .txt reports (self-created)
 
 ---
 
@@ -187,34 +177,6 @@ developers and companies integrating PassSec into their own systems.
 
 ---
 
-## Session Dashboard
-
-Real-time session statistics — no database, no account needed.
-
-Tracks automatically after first analysis:
-- Total passwords analyzed in session
-- Compromised passwords detected (rockyou + HIBP)
-- Best and worst score in session
-- Score distribution per level (WEAK / AVERAGE / GOOD / STRONG / FORTRESS)
-- Last 5 analyses — masked password + level + score + timestamp
-
-Data stored in JavaScript memory only — resets on page refresh, never sent to server.
-
----
-
-## PDF Reports
-
-Professional PDF reports generated with **ReportLab**:
-- White background (print-friendly)
-- Dark header with PassSec logo and cyan accent
-- Metadata table — masked password, length, character types
-- Result card — level, score, entropy, crack time
-- Color-coded criteria table — PASS (green) / FAIL (red)
-- SHA-256 hash in monospaced font
-- Full Romanian diacritics support via DejaVuSans TTF
-
----
-
 ## CI/CD Pipeline — GitHub Actions
 
 Automatic security pipeline run on every push to GitHub:
@@ -241,6 +203,22 @@ Automatic security pipeline run on every push to GitHub:
 
 - Does not account for user-specific patterns (names, dates)
 - Crack time is an estimation based on theoretical models
+
+---
+
+## Tech Stack
+
+| Component | Technology |
+|------------|-----------|
+| Analysis Engine | Python 3.14 + `re` (regex) |
+| Entropy Calculation | Shannon Entropy — `math.log2` |
+| Hashing | SHA-256 via `hashlib` |
+| API | Flask 3.1 + Flask-CORS |
+| Desktop GUI | tkinter |
+| Web Frontend | HTML5 · CSS3 · Vanilla JS |
+| Compromised Passwords | rockyou.txt (14M+ passwords) |
+| Security Standard | NIST SP 800-63B |
+
 
 ---
 
@@ -293,7 +271,6 @@ Automatic security pipeline run on every push to GitHub:
 
 ### Infrastructure & Deployment
 - [ ] Full containerization with Docker Compose
-- [ ] CI/CD pipeline (GitHub Actions)
 - [ ] Environment variables for all secrets (not hardcoded)
 - [ ] Cloud deployment (Railway / Render / AWS)
 - [ ] Monitoring & alerting (uptime, errors, security)
@@ -316,4 +293,4 @@ Personal project for educational and demonstration purposes. All rights reserved
 
 ---
 
-*Built with Python on MacBook M1 · VS Code · iTerm2 · GitHub*
+*Construit cu Python pe MacBook · VS Code · GitHub*
